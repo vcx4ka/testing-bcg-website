@@ -1,0 +1,44 @@
+name: Append public points export
+
+on:
+  repository_dispatch:
+    types: [points_export]
+
+permissions:
+  contents: write
+
+jobs:
+  append:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Append event data without duplicate event IDs
+        env:
+          EVENT_ID: ${{ github.event.client_payload.event_id }}
+          EVENT_CSV: ${{ github.event.client_payload.csv }}
+        run: |
+          set -euo pipefail
+          test -n "$EVENT_ID"
+          test -n "$EVENT_CSV"
+          mkdir -p frontend/public/data
+          FILE=frontend/public/data/points.csv
+          if [ ! -s "$FILE" ]; then
+            printf '%s\n' 'event_id,event_name,date,house,points' > "$FILE"
+          fi
+          if tail -n +2 "$FILE" | cut -d',' -f1 | grep -Fxq "$EVENT_ID"; then
+            echo "Event $EVENT_ID is already present; skipping duplicate export."
+            exit 0
+          fi
+          printf '%s\n' "$EVENT_CSV" | tail -n +2 >> "$FILE"
+      - name: Commit public data
+        run: |
+          git config user.name "UDSC Points Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add frontend/public/data/points.csv
+          if git diff --cached --quiet; then
+            echo "No data changes to commit."
+            exit 0
+          fi
+          git commit -m "Add points export ${{ github.event.client_payload.event_id }}"
+          git push
