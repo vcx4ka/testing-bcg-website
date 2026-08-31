@@ -31,6 +31,7 @@ export default function PointsLookup() {
         <div style={{ padding: 20, borderBottom: "1px solid var(--line)" }}><h2 style={{ fontSize: "1.2rem", marginBottom: 5 }}>{selected.eventTitle}</h2><span className="mono" style={{ color: "var(--muted)", fontSize: "0.8rem" }}>{formatDate(selected.date)} · {selected.totalPoints.toLocaleString()} total points</span></div>
         {HOUSES.map((h, i) => <div key={h.key} style={{ display: "flex", alignItems: "center", gap: 14, padding: "15px 20px", borderBottom: i === HOUSES.length - 1 ? "none" : "1px solid var(--line)" }}><HouseBadge house={h.key} size="sm" /><span style={{ flex: 1 }}>{h.label}</span><span className="mono" style={{ fontWeight: 700, fontSize: "1.05rem" }}>+{(selected.houses[h.key] || 0).toLocaleString()}</span></div>)}
       </div>
+      }
     </>}
   </div>;
 }
