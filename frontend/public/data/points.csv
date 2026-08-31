@@ -1,0 +1,4 @@
+event_id,event_name,date,house,points
+TEST-001,Test Community Dinner,2026-08-30,Gray,20
+TEST-001,Test Community Dinner,2026-08-30,Yellow,10
+TEST-001,Test Community Dinner,2026-08-30,Blue,10

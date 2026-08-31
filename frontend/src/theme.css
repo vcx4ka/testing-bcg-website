@@ -1,0 +1,211 @@
+:root {
+  /* Color tokens — Jefferson Blue (#232D4B) and UVA Orange (#E57200) are the
+     University's verified official brand colors. Everything else here is a
+     best-effort derived palette until exact brand values are provided. */
+  --navy-900: #16213e;
+  --navy-800: #232d4b;
+  --navy-700: #2c3a5e;
+  --ink: #1a2233;
+  --muted: #5b6472;
+  --line: #e4e7ec;
+  --surface: #ffffff;
+  --surface-alt: #f7f8fa;
+
+  --orange: #e57200;
+  --orange-dark: #b85a00;
+  --yellow: #f2c230;
+  --yellow-dark: #8a6d14;
+  --gray-house: #8b92a0;
+  --gray-house-dark: #54585d;
+
+  --success: #1c7a4d;
+  --danger: #b3261e;
+
+  /* Type — Libre Franklin stands in for Franklin Gothic (SDS's primary
+     brand font, not freely available as a web font). IBM Plex Mono is used
+     for tabular/data display only; it's not part of the SDS brand guide,
+     kept purely for numeral legibility in tables. */
+  --font-display: "Libre Franklin", -apple-system, sans-serif;
+  --font-body: "Libre Franklin", -apple-system, sans-serif;
+  --font-mono: "IBM Plex Mono", "Courier New", monospace;
+
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow-card: 0 1px 2px rgba(22, 33, 62, 0.06), 0 4px 16px rgba(22, 33, 62, 0.06);
+
+  /* Responsive edge padding: 16px on narrow phones, scaling to 24px by
+     tablet width and up. Used by .page-shell everywhere so no page is
+     ever flush against the screen edge. */
+  --edge-padding: clamp(16px, 4vw, 24px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--surface);
+  -webkit-font-smoothing: antialiased;
+  /* Prevents any stray wide element from ever creating page-level horizontal
+     scroll — only .card (wrapping wide tables) is allowed to scroll on X. */
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100%;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  line-height: 1.55;
+}
+
+a {
+  color: inherit;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
+
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--orange);
+}
+
+.page-shell {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 var(--edge-padding);
+  width: 100%;
+}
+
+.section {
+  padding: clamp(32px, 6vw, 56px) 0;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: var(--radius-sm);
+  border: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 10px 18px;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+  white-space: nowrap;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-primary {
+  background: var(--orange);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--orange-dark);
+}
+
+.btn-secondary {
+  background: var(--surface-alt);
+  color: var(--navy-800);
+  border: 1px solid var(--line);
+}
+
+.btn-secondary:hover {
+  background: #eef0f3;
+}
+
+.btn-danger {
+  background: #fdecea;
+  color: var(--danger);
+  border: 1px solid #f6c6c2;
+}
+
+.btn-danger:hover {
+  background: #fbdedb;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid var(--line);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+:focus-visible {
+  outline: 2px solid var(--orange);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Sticky-footer shell. min-height: 100dvh (dynamic viewport height) fixes
+   the classic mobile bug where 100vh includes space the browser's address
+   bar will later occupy, leaving a sliver of scrollable empty space below
+   the footer. Older browsers fall back to plain 100vh. */
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.app-main {
+  flex: 1 0 auto;
+  min-width: 0;
+}
