@@ -6,5 +6,5 @@ import react from "@vitejs/plugin-react";
 // so Vite needs to know that sub-path at build time.
 export default defineConfig({
   plugins: [react()],
-  base: "/bcg-website/",
+  base: "/testing-bcg-website/",
 });
