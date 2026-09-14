@@ -23,3 +23,5 @@ TEST-005,testing manual expire again,2026-08-29,Orange,5
 
 TEST-008,testing expire with something ending tomorrow,2026-08-31,Gray,10
 
+BCG-2026-9-14,Testing Email Sending,2026-09-14,Gray,15
+
