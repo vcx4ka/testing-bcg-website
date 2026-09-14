@@ -2,3 +2,12 @@ event_id,event_name,date,house,points
 TEST-001,Test Community Dinner,2026-08-30,Gray,20
 TEST-001,Test Community Dinner,2026-08-30,Yellow,10
 TEST-001,Test Community Dinner,2026-08-30,Blue,10
+TEST-002,Test Event 2,2026-08-24,,
+TEST-002,Test Event 2,2026-08-24,,
+TEST-002,Test Event 2,2026-08-24,,5
+TEST-002,Test Event 2,2026-08-24,,15
+TEST-002,Test Event 2,2026-08-24,,15
+TEST-002,Test Event 2,2026-08-24,Gray,15
+TEST-002,Test Event 2,2026-08-24,Gray,15
+TEST-002,Test Event 2,2026-08-24,Gray,15
+
