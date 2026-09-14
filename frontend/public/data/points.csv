@@ -2,24 +2,24 @@ event_id,event_name,date,house,points
 TEST-001,Test Community Dinner,2026-08-30,Gray,20
 TEST-001,Test Community Dinner,2026-08-30,Yellow,10
 TEST-001,Test Community Dinner,2026-08-30,Blue,10
-TEST-002,Test Event 2,2026-08-24,,
-TEST-002,Test Event 2,2026-08-24,,
-TEST-002,Test Event 2,2026-08-24,,5
-TEST-002,Test Event 2,2026-08-24,,15
-TEST-002,Test Event 2,2026-08-24,,15
+TEST-002,Test Event 2,2026-08-24,Orange,15
+TEST-002,Test Event 2,2026-08-24,Yellow,15
+TEST-002,Test Event 2,2026-08-24,Orange,15
+TEST-002,Test Event 2,2026-08-24,Blue,15
+TEST-002,Test Event 2,2026-08-24,Orange,15
 TEST-002,Test Event 2,2026-08-24,Gray,15
 TEST-002,Test Event 2,2026-08-24,Gray,15
 TEST-002,Test Event 2,2026-08-24,Gray,15
 
-TEST-004,TESTING MANUAL EXPIRE,2026-08-23,,
+TEST-004,TESTING MANUAL EXPIRE,2026-08-23,Yellow,5
 
-TEST-007,testing expire with something already inactive,2026-08-29,,
-TEST-007,testing expire with something already inactive,2026-08-29,,
+TEST-007,testing expire with something already inactive,2026-08-29,Blue,10
+TEST-007,testing expire with something already inactive,2026-08-29,Yellow,10
 
-TEST-003,Test 3,2026-08-25,,
+TEST-003,Test 3,2026-08-25,Yellow,20
 TEST-003,Test 3,2026-08-25,Gray,20
 
-TEST-005,testing manual expire again,2026-08-29,,
+TEST-005,testing manual expire again,2026-08-29,Orange,5
 
 TEST-008,testing expire with something ending tomorrow,2026-08-31,Gray,10
 
