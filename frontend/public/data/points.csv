@@ -21,3 +21,5 @@ TEST-003,Test 3,2026-08-25,Gray,20
 
 TEST-005,testing manual expire again,2026-08-29,,
 
+TEST-008,testing expire with something ending tomorrow,2026-08-31,Gray,10
+
