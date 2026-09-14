@@ -19,3 +19,5 @@ TEST-007,testing expire with something already inactive,2026-08-29,,
 TEST-003,Test 3,2026-08-25,,
 TEST-003,Test 3,2026-08-25,Gray,20
 
+TEST-005,testing manual expire again,2026-08-29,,
+
